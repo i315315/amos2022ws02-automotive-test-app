@@ -38,19 +38,13 @@ class MainActivity<ActionBarActivity> : AppCompatActivity() {
 
     }
 
-    /*fun showBackButton() {
-        if (getActivity() is ActionBarActivity) {
-            (getActivity() as ActionBarActivity?).getSupportActionBar().setDisplayHomeAsUpEnabled(true)
-        }
-    }*/
-
-    override fun onContextItemSelected(item: MenuItem): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed()
             }
         }
-        return super.onContextItemSelected(item)
+        return super.onOptionsItemSelected(item)
     }
 
 
