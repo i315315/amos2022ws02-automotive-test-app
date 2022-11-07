@@ -1,14 +1,17 @@
 package com.amos.infotaimos
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.google.android.material.internal.ContextUtils.getActivity
 
-class MainActivity : AppCompatActivity() {
+
+class MainActivity<ActionBarActivity> : AppCompatActivity() {
 
     private lateinit var navController: NavController
 
@@ -26,6 +29,30 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
+
+        val actionBar = getSupportActionBar()
+        if (actionBar != null) {
+            //actionBar.setHomeAsUpIndicator(R.drawable.mybutton)
+            actionBar.setDisplayHomeAsUpEnabled(true)
+        }
+
     }
+
+    /*fun showBackButton() {
+        if (getActivity() is ActionBarActivity) {
+            (getActivity() as ActionBarActivity?).getSupportActionBar().setDisplayHomeAsUpEnabled(true)
+        }
+    }*/
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+            }
+        }
+        return super.onContextItemSelected(item)
+    }
+
+
 
 }

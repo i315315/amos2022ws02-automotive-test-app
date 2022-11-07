@@ -13,6 +13,12 @@ class LandingPage : Fragment() {
 
     private var binding: FragmentLandingPageBinding? = null
 
+    //fun showBackButton(){
+       // if (getActivity() instanceof ActionBarActivity){
+         //   ((ActionBarActivity) getActivity()).getSupportActionBar().setDispla
+        //}
+    //}
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,6 +27,8 @@ class LandingPage : Fragment() {
         val bindingObject = FragmentLandingPageBinding.inflate(inflater, container, false)
         binding = bindingObject
         return bindingObject.root
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

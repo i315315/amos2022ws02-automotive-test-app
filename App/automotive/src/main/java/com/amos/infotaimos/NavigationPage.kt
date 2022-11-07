@@ -19,6 +19,9 @@ class NavigationPage : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        //showBackButton()?
+
         return inflater.inflate(R.layout.fragment_navigation_page, container, false)
     }
 
