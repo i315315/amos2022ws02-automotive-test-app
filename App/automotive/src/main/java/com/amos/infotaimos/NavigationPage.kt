@@ -1,11 +1,11 @@
 package com.amos.infotaimos
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 
 class NavigationPage : Fragment() {
 
@@ -16,7 +16,8 @@ class NavigationPage : Fragment() {
     private lateinit var viewModel: NavigationPageViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_navigation_page, container, false)
@@ -27,5 +28,4 @@ class NavigationPage : Fragment() {
         viewModel = ViewModelProvider(this).get(NavigationPageViewModel::class.java)
         // TODO: Use the ViewModel
     }
-
 }
